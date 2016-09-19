@@ -32,3 +32,20 @@ Vagrant.configure(2) do |config|
   end
 ```
 
+### Using ansible as provisioner provider
+#### Install ansible
+To install ansible to use within vagrant:
+
+```ruby
+$ sudo dnf install ansible
+```
+
+### Config ansible provider
+Configure ansible provider in Vagrantfile 
+
+```ruby
+config.vm.provision :ansible 	do |ansible|
+	ansible.playbook = "first.yaml"
+end 
+```
+
